@@ -1,11 +1,11 @@
 {
   "name": "nodebb-plugin-openfantasy",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "nbbpm": {
-    "compatibility": "^0.6.0"
+    "compatibility": "^1.19.0"
   },
   "description": "A fully featured RPG (Role Playing Game) plugin for NodeBB",
-  "main": "library.js",
+  "main": "openfantasy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

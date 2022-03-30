@@ -1,15 +1,15 @@
 "use strict";
 
 var	fs = require('fs'),
-	async = require('async'),
+	async = require.main.require('async'),
 	path = require('path'),
-	nconf = require('nconf'),
-	winston = require('winston'),
+	nconf = require.main.require('nconf'),
+	winston =  require.main.require('winston'),
 	data = require('./data/data'),
-	meta = module.parent.require('./meta'),
-	plugins = module.parent.require('./plugins'),
-	templates = module.parent.require('templates.js'),
-	translator = module.parent.require('../public/src/modules/translator');
+	meta = require.main.require('./src/meta'),
+	plugins = require.main.require('./src/plugins'),
+	templates = require.main.require('benchpressjs'),
+	translator = require.main.require('./src/translator');
 
 
 
@@ -25,7 +25,7 @@ var constants = Object.freeze({
 
 function initialize(app, middleware, controllers) {
 	require('./lib/nodebb');
-	
+
 	require('./lib/middleware')(app, middleware);
 	require('./lib/controllers')(controllers);
 	require('./lib/routes/main')(app, middleware, controllers);
